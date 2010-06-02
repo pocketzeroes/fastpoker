@@ -14,5 +14,5 @@
 #define CYAN		6
 #define	WHITE		7
 void textcolor(int attr, int fg, int bg){
-	wprintf(L"%c[%d;%d;%dm",0x1B,attr,fg+30,bg+40);
+	wprintf(L"%lc[%d;%d;%dm",0x1B,attr,fg+30,bg+40);
 }

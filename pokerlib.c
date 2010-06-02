@@ -54,11 +54,11 @@ void print_hand( int *hand, int n ){
         if ( *hand & CLUB)
             suit=L'♣';
         else if ( *hand & DIAMOND ){
-        	textcolor(RESET,RED,HIDDEN);
+        	textcolor(RESET,RED,WHITE);
             suit=L'♦';
         }
         else if ( *hand & HEART ){
-        	textcolor(RESET,RED,HIDDEN);
+        	textcolor(RESET,RED,WHITE);
             suit=L'♥';
         }
         else
@@ -68,7 +68,7 @@ void print_hand( int *hand, int n ){
         	wprintf(L"10%lc ",suit);
 		else
 	        wprintf(L"%lc%lc ",rank[r],suit);
-        textcolor(RESET,BLACK,HIDDEN);
+        textcolor(RESET,BLACK,WHITE);
     }
     putwchar('\n');
 }

@@ -1,3 +1,4 @@
+#include<wchar.h>
 #define	STRAIGHT_FLUSH	1
 #define	FOUR_OF_A_KIND	2
 #define	FULL_HOUSE	3
@@ -8,17 +9,25 @@
 #define	ONE_PAIR	8
 #define	HIGH_CARD	9
 #define	RANK(x)		((x >> 8) & 0xF)
-static char *value_str[] = {
-	"",
-	"Straight Flush",
-	"Four of a Kind",
-	"Full House",
-	"Flush",
-	"Straight",
-	"Three of a Kind",
-	"Two Pair",
-	"One Pair",
-	"High Card"
+static wchar_t*value_str[]={
+	L"",
+	L"Straight Flush",
+	L"Four of a Kind",
+	L"Full House",
+	L"Flush",
+	L"Straight",
+	L"Three of a Kind",
+	L"Two Pair",
+	L"One Pair",
+	L"High Card"
+};
+static wchar_t*act_str[]={
+    L"folds",
+    L"checks",
+    L"calls",
+    L"bets",
+    L"raises",
+    L"is all in"
 };
 #define CLUB	0x8000
 #define DIAMOND 0x4000
