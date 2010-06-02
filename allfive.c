@@ -5,6 +5,7 @@
 #include<stdbool.h>
 #include<time.h>
 #include<stdlib.h>
+#define delay 2
 wchar_t p1name[10];
 wchar_t p2name[10];
 bool t=true;
@@ -30,20 +31,21 @@ int main(){
 	shuffle_deck(deck);
 	ea=eval_5hand(deck);
 	eb=eval_5hand(deck+5);
-	wprintf(L"%S posts the Small Blind\n",turn());
-	wprintf(L"%S posts the Big Blind\n",turn());
-	wprintf(L"%S %S\n",turn(),act());
-	wprintf(L"%S %S\n",turn(),act());
+	wprintf(L"%S posts the Small Blind\n",turn());sleep(delay);
+	wprintf(L"%S posts the Big Blind\n",turn());sleep(delay);
+	wprintf(L"preflop\n");
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
 	wprintf(L"flop\n");
-	wprintf(L"%S %S\n",turn(),act());
-	wprintf(L"%S %S\n",turn(),act());
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
 	wprintf(L"turn\n");
-	wprintf(L"%S %S\n",turn(),act());
-	wprintf(L"%S %S\n",turn(),act());
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
 	wprintf(L"river\n");
+	wprintf(L"%S %S\n",turn(),act());sleep(delay);
 	wprintf(L"%S %S\n",turn(),act());
-	wprintf(L"%S %S\n",turn(),act());
-	wprintf(L"showdown\n");
+	wprintf(L"showdown\n");sleep(delay);
 	if(ea<eb){
 		wprintf(L"%ls wins with %ls\n",p1name,value_str[hand_rank(ea)]);
 		print_hand(deck,5);
