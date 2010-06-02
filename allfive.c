@@ -16,7 +16,12 @@ wchar_t*turn(){
 		return p1name;
 }
 wchar_t*act(){
-	return act_str[rand()%6];
+	int ind=rand()%6;
+	if(ind==0){
+		wprintf(L"He folds and loses the game\n");
+		exit(0);
+	}
+	return act_str[ind];
 }
 int main(){
 	srand((unsigned)time(NULL));
