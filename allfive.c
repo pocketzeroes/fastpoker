@@ -1,3 +1,7 @@
+/**
+ *  \file allfive.c
+ *  \brief Brief
+ */
 #include <stdio.h>
 #include "poker.h"
 #include<wchar.h>
@@ -9,12 +13,26 @@
 wchar_t p1name[10];
 wchar_t p2name[10];
 bool t=true;
+/**
+ *  \brief Brief
+ *  
+ *  \return Return_Description
+ *  
+ *  \details Details
+ */
 wchar_t*turn(){
 	if(t=!t)
 		return p2name;
 	else
 		return p1name;
 }
+/**
+ *  \brief Brief
+ *  
+ *  \return Return_Description
+ *  
+ *  \details Details
+ */
 wchar_t*act(){
 	int ind=rand()%6;
 	if(ind==0){
@@ -23,6 +41,13 @@ wchar_t*act(){
 	}
 	return act_str[ind];
 }
+/**
+ *  \brief Brief
+ *  
+ *  \return Return_Description
+ *  
+ *  \details Details
+ */
 int main(){
 	srand((unsigned)time(NULL));
     setlocale(LC_CTYPE,"en_US.utf8");
@@ -56,12 +81,14 @@ int main(){
 		print_hand(deck,5);
 		wprintf(L"%ls had %ls\n",p2name,value_str[hand_rank(eb)]);
 		print_hand(deck+5,5);
-	}else if(ea>eb){
+	}
+    else if(ea>eb){
 		wprintf(L"%ls wins with %ls\n",p2name,value_str[hand_rank(eb)]);
 		print_hand(deck+5,5);
 		wprintf(L"%ls had %ls\n",p1name,value_str[hand_rank(ea)]);
 		print_hand(deck,5);
-	}else{
+	}
+    else{
 		wprintf(L"Split pot %ls\n",value_str[hand_rank(ea)]);
 		wprintf(L"%ls hand\n",p1name);
 		print_hand(deck,5);
@@ -70,3 +97,10 @@ int main(){
 	}
 	return 0;
 }
+/**
+
+  $Log
+  
+
+*/
+
