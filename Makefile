@@ -1,4 +1,4 @@
-
+SHELL := $(SHELL) -e
 CC=gcc
 
 allfive: allfive.c pokerlib.o
@@ -8,4 +8,14 @@ pokerlib.o: pokerlib.c arrays.h
 	${CC} -c pokerlib.c -o pokerlib.o
 clean:
 	rm allfive pokerlib.o
-test: echo OK
+
+test:
+	/bin/true
+
+fail:
+	/bin/false
+
+check:
+	@echo "RUNNing positive test"
+
+
