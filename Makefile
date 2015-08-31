@@ -8,4 +8,4 @@ pokerlib.o: pokerlib.c arrays.h
 	${CC} -c pokerlib.c -o pokerlib.o
 clean:
 	rm allfive pokerlib.o
-test: @echo "Success, all tests passed."
+test: echo OK
